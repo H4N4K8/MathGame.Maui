@@ -3,13 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathGame.Maui.GamePage"
              Title="GamePage">
-    <VerticalStackLayout>
-        <Label 
+    <VerticalStackLayout
+        Padding ="100"
+        Spacing="25">
+        <VerticalStackLayout
+            x:Name="QuestionArea"
+            Spacing="25">
+            <Label 
             x:Name="QuestionLabel"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Entry
-            x:Name="Answer"
+            x:Name="AnswerEntry"
             HorizontalOptions="Center"
             >
         </Entry>
@@ -21,10 +26,21 @@
         <Label
             x:Name="AnswerLabel"
             VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="32"/>
+            
+        </VerticalStackLayout>
+        
         <Label
             x:Name="GameOverLabel"
             VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="32"/>
+        <Button
+            IsVisible="False"
+            x:Name="BackToMenuBtn"
+            Text="Back to Menu"
+            Clicked="OnBackToMenu"
             HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>
